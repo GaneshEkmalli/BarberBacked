@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import HTTPResponse from '../interfaces/http-response.success';
-import { sendAuthInitOTPSMS } from '../services/sms.service';
+// import { sendAuthInitOTPSMS } from '../services/sms.service';
 import {
     createUserOTP,
     findUserOTP,
@@ -46,9 +46,7 @@ export const handleAuthOTPInit = async (
             id: userOTPRecord.id,
         };
         const encoded = encode(JSON.stringify(details));
-
-        await sendAuthInitOTPSMS(phoneNumber, otp);
-
+        // await sendAuthInitOTPSMS(phoneNumber, otp);
         res.status(200).json({ data: encoded });
     } catch (ex) {
         next(ex);
@@ -103,6 +101,7 @@ export const handleAuthOTPVerify = async (
                             data: {
                                 accessToken,
                                 refreshToken,
+                                user
                             },
                         });
                     } else {

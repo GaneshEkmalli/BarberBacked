@@ -3,7 +3,7 @@ import db from '../models';
 
 const UserOTP: any = db.userOTP;
 
-export const createUserOTP = async (otp: string, expirationTime: Date) => await UserOTP.create({ otp, expirationTime });
+export const createUserOTP = async (otp: any, expirationTime: Date) => await UserOTP.create({ otp, expirationTime });
 
 export const findUserOTP = async (id: string) => await UserOTP.findOne({ where: { id } });
 
