@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import HTTPResponse from '../interfaces/http-response.success';
-import { sendAuthInitOTPSMS } from '../services/sms.service';
+// import { sendAuthInitOTPSMS } from '../services/sms.service';
 import {
     createUserOTP,
     findUserOTP,
