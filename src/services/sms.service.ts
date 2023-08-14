@@ -4,7 +4,7 @@ import { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER } from "../c
 
 export const sendAuthInitOTPSMS = async (
     phoneNumber: string,
-    otp: string
+    otp: any
 ) => {
     const message = `<#> ${otp} is your One Time Password(OTP) for verification at TestApp. Ref: NBa0gyxsT9W`;
     const client = twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
